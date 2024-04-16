@@ -28,7 +28,7 @@ app.get('/abracadabra/usuarios', (req, res) => {
 //el servidor.En caso de ser exitoso, permitir el paso a la ruta GET correspondiente, de lo contrario
 //devolver la imagen “who.jpeg”.
 
-app.get('/abracadabra/juego/:usuario', (req, res, next) => {
+app.use('/abracadabra/juego/:usuario', (req, res, next) => {
     const usuario = req.params.usuario;    
     usuarios.includes(usuario) ? next() :res.sendFile(__dirname + '/assets/who.jpeg' ) 
 });
